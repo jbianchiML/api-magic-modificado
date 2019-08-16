@@ -2,6 +2,8 @@ package edu.tallerjava.services;
 
 import edu.tallerjava.modelo.Category;
 import edu.tallerjava.repositorios.CategoryRepository;
+import edu.tallerjava.repositorios.CategoryRepositoryImp;
+import edu.tallerjava.repositorios.CategoryRepositoryML;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,32 +15,26 @@ import java.util.function.Predicate;
 public class CategoryServiceImpl implements CategoryService {
 
     @Autowired
-    private CategoryRepository categoryRepository;
+    private CategoryRepository categoryRepositoryMl;
 
 
-
-    @Override
+   /* @Override
     public Category createCategory() {
         Category category=new Category();
         categoryRepository.save(category);
         return category;
-    }
+    } */
 
     @Override
     public List<Category> findAll() {
         List<Category> categoryList;
-        categoryList = categoryRepository.findAll();
+        categoryList = categoryRepositoryMl.getAll();
         return categoryList;
     }
 
     @Override
-    public Category getCategory(Long id) {
-        Category category;
-        Optional opt = categoryRepository.findById(id);
-        if(opt.isEmpty()){
-            return category = null;
-        }
-        category = (Category) opt.get();
+    public Category getCategory(String id) {
+        Category category = categoryRepositoryMl.getCategory(id);
         return category;
     }
 

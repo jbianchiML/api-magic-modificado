@@ -22,7 +22,7 @@ public class CategoriesAcceptanceTest extends AcceptanceTest{
     @Sql(value = "/sql/createCategories.sql")
     public void findAll(){
         final List results = restTemplate.getForObject(url + "/categories", List.class);
-        assertThat(results).hasSize(8);
+        assertThat(results).hasSize(32);
     }
 
     @Test

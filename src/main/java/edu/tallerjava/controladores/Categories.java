@@ -24,10 +24,10 @@ public class Categories {
         Category category7 = new Category();
         Category category8 = new Category();
 
-        category1.setId(1L);
-        category2.setId(2L);
-        category8.setId(8L);
-        category3.setId(0L);
+        category1.setId("2L");
+        category2.setId("2L");
+        category8.setId("8L");
+        category3.setId("0L");
 
         category1.setPermalink("http://home.mercadolibre.com.ar/vehiculos-accesorios/");
         category2.setPermalink("http://home.mercadolibre.com.ar/vehiculos-accesorios/");

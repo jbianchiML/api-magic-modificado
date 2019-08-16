@@ -28,7 +28,7 @@ public class CategoryController {
 
     @GetMapping(path = "/categories/{id}")
     public ResponseEntity<Category> getCategory( @PathVariable String id){
-        Category category = categoryService.getCategory(Long.valueOf(id));
+        Category category = categoryService.getCategory(id);
         if(category != null)
             return new ResponseEntity(category, HttpStatus.OK);
         else{
@@ -36,9 +36,9 @@ public class CategoryController {
         }
     }
 
-    @PostMapping (path ="/categories")
+    /*@PostMapping (path ="/categories")
     public ResponseEntity<Category> createCategory (){
         Category category= categoryService.createCategory();
         return new ResponseEntity(category,HttpStatus.OK);
-    }
+    }*/
 }
