@@ -35,7 +35,7 @@ public class CategoryServiceImpl implements CategoryService {
     public Category getCategory(Long id) {
         Category category;
         Optional opt = categoryRepository.findById(id);
-        if(!opt.isEmpty()){
+        if(opt.isEmpty()){
             return category = null;
         }
         category = (Category) opt.get();

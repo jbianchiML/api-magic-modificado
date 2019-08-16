@@ -32,7 +32,7 @@ public class CategoryController {
         if(category != null)
             return new ResponseEntity(category, HttpStatus.OK);
         else{
-            return  new ResponseEntity(HttpStatus.NOT_FOUND);
+            return  new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
